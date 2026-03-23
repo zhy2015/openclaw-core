@@ -1,0 +1,10 @@
+workflow_id: ai-smoke
+name: AI Smoke Workflow
+nodes:
+  - id: list_skills
+    skill_name: echo-skill
+    tool_name: echo
+    inputs:
+      text: hello
+    outputs:
+      - echoed

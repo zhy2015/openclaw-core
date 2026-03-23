@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-ROOT = Path("/root/.openclaw/workspace")
+ROOT = Path(__file__).resolve().parents[2]
 TARGET_DIRS = [ROOT / "core", ROOT / "scripts", ROOT / "projects"]
 FORBIDDEN_PATTERNS = [
     "from core.infra.registry import get_registry",

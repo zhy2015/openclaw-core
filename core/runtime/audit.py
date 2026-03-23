@@ -7,8 +7,9 @@ from typing import Any
 
 
 class AuditLogger:
-    def __init__(self, path: str = "/root/.openclaw/workspace/logs/constitution.log"):
-        self.path = Path(path)
+    def __init__(self, path: str | None = None):
+        resolved = Path(path) if path else Path(__file__).resolve().parents[2] / "logs" / "constitution.log"
+        self.path = resolved
         self.path.parent.mkdir(parents=True, exist_ok=True)
 
     def log(self, event: str, payload: dict[str, Any]) -> None:

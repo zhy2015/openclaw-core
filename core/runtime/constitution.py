@@ -35,16 +35,16 @@ class ConstitutionRuntime:
         memory_policy: MemoryPolicyEngine | None = None,
         audit: AuditLogger | None = None,
         workflow_runner: WorkflowRunner | None = None,
-        workspace_root: str = "/root/.openclaw/workspace",
+        workspace_root: str | None = None,
     ):
+        self.workspace_root = Path(workspace_root) if workspace_root else Path(__file__).resolve().parents[2]
         self.skill_manager = skill_manager or SkillManager()
         self.router = router or TaskRouter()
         self.memory_policy = memory_policy or MemoryPolicyEngine()
-        self.audit = audit or AuditLogger()
+        self.audit = audit or AuditLogger(str(self.workspace_root / "logs" / "constitution.log"))
         self.progress = ProgressTracker()
         self.dispatcher = GovernedDispatcher(self.skill_manager)
-        self.workflow_runner = workflow_runner or WorkflowRunner(workspace_root=workspace_root, dispatcher=self.dispatcher)
-        self.workspace_root = Path(workspace_root)
+        self.workflow_runner = workflow_runner or WorkflowRunner(workspace_root=str(self.workspace_root), dispatcher=self.dispatcher)
 
     def _build_slow_workflow(self, task: TaskEnvelope) -> str:
         workflow_id = f"constitution-{uuid.uuid4().hex[:10]}"

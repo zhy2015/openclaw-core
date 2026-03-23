@@ -1,5 +1,9 @@
 # OpenClaw Workflow Engine
 
+![status](https://img.shields.io/badge/status-rebuilding-orange)
+![scope](https://img.shields.io/badge/focus-workflow--engine-blue)
+![language](https://img.shields.io/badge/docs-bilingual-brightgreen)
+
 [English](README.md) | 中文说明
 
 OpenClaw Workflow Engine 是一个聚焦于**工作流运行时 / 编排引擎**的仓库。
@@ -90,6 +94,15 @@ python3 -m pytest -q \
 
 这个仓库已经被重建成 **engine-only skeleton**。
 当前最重要的下一步，是让 `workflow run` 真正形成**独立可运行闭环**，也就是样例 workflow 不依赖外部工作区就能跑通。
+
+## 项目导航
+
+- 架构图：`docs/architecture-overview.md`
+- 功能说明：`docs/FEATURES.md`
+- 路线图：`docs/ROADMAP.md`
+- 扩展点：`docs/EXTENSION_POINTS.md`
+- Smoke workflow 说明：`docs/SMOKE_WORKFLOW.md`
+- 贡献指南：`CONTRIBUTING.md`
 
 ## 近期路线
 

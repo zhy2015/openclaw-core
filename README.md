@@ -1,5 +1,9 @@
 # OpenClaw Workflow Engine
 
+![status](https://img.shields.io/badge/status-rebuilding-orange)
+![scope](https://img.shields.io/badge/focus-workflow--engine-blue)
+![language](https://img.shields.io/badge/docs-bilingual-brightgreen)
+
 English | [中文说明](README.zh-CN.md)
 
 OpenClaw Workflow Engine is a focused repository for a governed workflow runtime.
@@ -85,6 +89,15 @@ python3 -m pytest -q \
 
 This repository has been rebuilt into an engine-only skeleton.
 The current focus is to make `workflow run` form a fully standalone execution closure, so that sample workflows can run without depending on an external workspace environment.
+
+## Project navigation
+
+- Architecture: [docs/architecture-overview.md](docs/architecture-overview.md)
+- Features: [docs/FEATURES.md](docs/FEATURES.md)
+- Roadmap: [docs/ROADMAP.md](docs/ROADMAP.md)
+- Extension points: [docs/EXTENSION_POINTS.md](docs/EXTENSION_POINTS.md)
+- Smoke workflow: [docs/SMOKE_WORKFLOW.md](docs/SMOKE_WORKFLOW.md)
+- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Near-term roadmap
 

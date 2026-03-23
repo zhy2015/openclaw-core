@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONPATH: ${{ github.workspace }}
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
